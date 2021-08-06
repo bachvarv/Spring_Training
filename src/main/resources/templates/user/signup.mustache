@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <!-- Read CSS -->
+        <link rel ="stylesheet" href ="/webjars/bootstrap/css/bootstrap.min.css" >
+        <link rel ="stylesheet" href ="/css/user/signup.css" >
+        <!-- Read JS -->
+        <script src ="/webjars/jquery/jquery.min.js" defer ></script>
+        <script src ="/webjars/bootstrap/js/bootstrap.min.js" defer ></script>
+
+        <title>User Signup</title>
+    </head>
+    <body class="bg-light">
+        <form id="signup-form" method="post" action="/user/signup" class="form-signup">
+            {{#localeMessages}}
+            <h1 class="text-center">{{user.signup.title}}</h1>
+            <!-- User ID-->
+            <div>
+                <label for="userId">{{userId}}</label>
+                <input type="text" class="form-control" >
+            </div>
+
+            <!-- Password-->
+            <div>
+                <label for="password">{{password}}</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <!-- User Name -->
+
+            <div class ="form-group" >
+                <label for ="userName" > {{userName}}</label>
+                <input type ="text" class ="form-control" >
+            </div>
+
+            <!-- Birthday -->
+            <div class ="form-group" >
+                <label for ="birthday" > {{birthday}}</label>
+                <input type ="text" class ="form-control" >
+            </div>
+            <!-- Age -->
+            <div class ="form-group" >
+                <label for ="age" > {{age}}</label>
+                <input type ="text" class ="form-control" >
+            </div>
+
+            <!-- Gender-->
+            <div class="form-group">
+
+<!--            <div class="form-check-inline">-->
+                    {{#genderMap}}
+                        <div  class="form-check-inline">
+                            <input type="radio" id="{{value}} "class="form-check-input" value="{{value}}"/>
+                            <label class="form-check-label"> {{key}}</label>
+                        </div>
+                    {{/genderMap}}
+        <!--    </div>-->
+
+            </div>
+            <!-- Signup button -->
+
+            <input type ="submit" value ={{user.signup.btn}}
+                   class ="btn btn-primary w-100 mt-3" />
+
+                {{/localeMessages}}
+        </form>
+    </body>
+
+</html>
